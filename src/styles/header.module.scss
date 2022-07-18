@@ -23,7 +23,11 @@
     z-index: 2;
 
     background-color: #262626;
-    opacity: 0.5;
+    // opacity: 0.4;
+
+    background: linear-gradient(to right, #fc5c7d, #6a82fb);
+
+    opacity: 0.6;
   }
 
   #intro {
