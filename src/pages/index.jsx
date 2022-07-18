@@ -22,15 +22,15 @@ export default function Home() {
           <NavBar />
 
           {/* Text  content */}
-          <div className='container h-auto flex flex-col space-y-6 px-10 mx-auto'>
+          <div className='container h-auto flex flex-col space-y-10 px-10 mx-auto'>
             <h1 className='max-w-md font-medium text-5xl text-center text-blue-50 md:text-6xl sm:text-left'>
               Take Off With Confidence
             </h1>
 
-            <p className='max-w-sm text-zinc-300 text-center sm:text-left'>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores
-              deleniti harum similique nam iure rem eligendi accusantium dolore
-              ipsum.
+            <p className='max-w-sm text-zinc-200 text-center sm:text-left'>
+              Allow us to provide you with an exceptional flying experience by
+              providing you with strong comfort and luxury as we transport you
+              to your destination.
             </p>
           </div>
         </div>

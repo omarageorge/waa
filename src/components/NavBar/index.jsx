@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const index = () => {
   return (
-    <nav className='flex justify-between items-center pt-6 px-4 md:mx-20 md:py-5'>
+    <nav className='container px-10 mx-auto flex justify-between items-center pt-6'>
       {/* Logo */}
       <Link href='/'>
         <span className='font-semibold text-2xl tracking-widest text-slate-300 cursor-pointer'>
