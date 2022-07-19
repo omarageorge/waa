@@ -2,8 +2,8 @@ import Image from 'next/image';
 
 export const Card = ({ image, destination, price }) => {
   return (
-    <figure className='w-60 h-auto rounded-3xl shadow-xl '>
-      <div className='w-full h-32 relative'>
+    <figure className='w-60 h-auto rounded-3xl shadow-xl md:w-80 xl:w-60 '>
+      <div className='w-full h-32 relative md:h-44 xl:h-32'>
         <Image
           src={image}
           layout='fill'
