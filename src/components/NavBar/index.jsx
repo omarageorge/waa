@@ -19,7 +19,7 @@ function NavBar() {
       {/* navlinks */}
       <div
         className={`${style.navlinks} ${
-          active === true ? 'translate-x-[0%]' : 'translate-x-[-100%]'
+          active === false && 'translate-x-[-100%]'
         }`}
       >
         <Link href=''>
@@ -45,9 +45,17 @@ function NavBar() {
 
       {/* Burger menu */}
       <div className={style.burger} onClick={handleBurgerClick}>
-        <div className='line1'></div>
-        <div className='line2'></div>
-        <div className='line3'></div>
+        <div
+          className={`line1 ${
+            active === true && '-rotate-45 translate-x-[-5px] translate-y-[6px]'
+          }`}
+        ></div>
+        <div className={`line2 ${active === true && 'opacity-0'}`}></div>
+        <div
+          className={`line3 ${
+            active === true && 'rotate-45 translate-x-[-5px] translate-y-[-6px]'
+          }`}
+        ></div>
       </div>
     </nav>
   );
