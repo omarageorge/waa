@@ -5,15 +5,33 @@ import style from './styles.module.scss';
 function NavBar() {
   const [active, setActive] = useState(false);
 
+  const hyperlinks = [
+    { title: 'Home', link: '/' },
+    { title: 'About', link: '/about' },
+    { title: 'Gallery', link: '/gallery' },
+    { title: 'Policy', link: '/policy' },
+    { title: 'Contact', link: '/contact' },
+  ];
+
   const handleBurgerClick = () => {
     setActive(!active);
   };
 
   return (
-    <nav className={style.navbar}>
+    <nav
+      className={`${style.navbar} ${active === true && 'bg-white shadow-2xl'}`}
+    >
       {/* Logo */}
       <Link href='/'>
-        <span className={style.logo}>WAA</span>
+        <span
+          className={`${style.logo} ${
+            active === true
+              ? 'text-transparent bg-clip-text bg-gradient-to-tr from-purple-400 to-pink-600'
+              : 'text-gray-100'
+          }`}
+        >
+          WAA
+        </span>
       </Link>
 
       {/* navlinks */}
@@ -22,38 +40,32 @@ function NavBar() {
           active === false && 'translate-x-[-100%]'
         }`}
       >
-        <Link href=''>
-          <a>Home</a>
-        </Link>
-
-        <Link href=''>
-          <a>About</a>
-        </Link>
-
-        <Link href=''>
-          <a>Gallery</a>
-        </Link>
-
-        <Link href=''>
-          <a>Policy</a>
-        </Link>
-
-        <Link href=''>
-          <a>Contact</a>
-        </Link>
+        {hyperlinks.map((hyperlink, index) => (
+          <Link key={index} href={hyperlink.link}>
+            <a>{hyperlink.title}</a>
+          </Link>
+        ))}
       </div>
 
       {/* Burger menu */}
       <div className={style.burger} onClick={handleBurgerClick}>
         <div
           className={`line1 ${
-            active === true && '-rotate-45 translate-x-[-5px] translate-y-[6px]'
+            active === true
+              ? 'bg-gray-500 -rotate-45 translate-x-[-5px] translate-y-[6px]'
+              : 'bg-gray-200'
           }`}
         ></div>
-        <div className={`line2 ${active === true && 'opacity-0'}`}></div>
+        <div
+          className={`line2 ${
+            active === true ? 'bg-gray-500 opacity-0' : 'bg-gray-200'
+          }`}
+        ></div>
         <div
           className={`line3 ${
-            active === true && 'rotate-45 translate-x-[-5px] translate-y-[-6px]'
+            active === true
+              ? 'bg-gray-500 rotate-45 translate-x-[-5px] translate-y-[-6px]'
+              : 'bg-gray-200'
           }`}
         ></div>
       </div>
