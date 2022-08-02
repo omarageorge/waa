@@ -1,8 +1,14 @@
-import { useRef } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import style from './styles.module.scss';
 
-const index = () => {
+function NavBar() {
+  const [active, setActive] = useState(false);
+
+  const handleBurgerClick = () => {
+    setActive(!active);
+  };
+
   return (
     <nav className={style.navbar}>
       {/* Logo */}
@@ -11,7 +17,11 @@ const index = () => {
       </Link>
 
       {/* navlinks */}
-      <div className={style.navlinks}>
+      <div
+        className={`${style.navlinks} ${
+          active === true ? 'translate-x-[0%]' : 'translate-x-[-100%]'
+        }`}
+      >
         <Link href=''>
           <a>Home</a>
         </Link>
@@ -34,13 +44,13 @@ const index = () => {
       </div>
 
       {/* Burger menu */}
-      <div className={style.burger}>
-        <div className={style.line}></div>
-        <div className={style.line}></div>
-        <div className={style.line}></div>
+      <div className={style.burger} onClick={handleBurgerClick}>
+        <div className='line1'></div>
+        <div className='line2'></div>
+        <div className='line3'></div>
       </div>
     </nav>
   );
-};
+}
 
-export default index;
+export default NavBar;
