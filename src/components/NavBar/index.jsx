@@ -37,7 +37,7 @@ function NavBar() {
       {/* navlinks */}
       <div
         className={`${style.navlinks} ${
-          active === false && 'translate-x-[-100%]'
+          active === false && 'translate-x-[-100%] md:translate-x-[0%]'
         }`}
       >
         {hyperlinks.map((hyperlink, index) => (
