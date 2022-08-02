@@ -18,3 +18,18 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+/* Navbar */
+.active {
+  @apply bg-white text-slate-900;
+}
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}

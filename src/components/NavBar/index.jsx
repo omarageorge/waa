@@ -1,17 +1,17 @@
+import { useRef } from 'react';
 import Link from 'next/link';
+import style from './styles.module.scss';
 
 const index = () => {
   return (
-    <nav className='container px-10 mx-auto flex justify-between items-center pt-6'>
+    <nav className={style.navbar}>
       {/* Logo */}
       <Link href='/'>
-        <span className='font-semibold text-2xl tracking-widest text-slate-100 cursor-pointer'>
-          WAA
-        </span>
+        <span className={style.logo}>WAA</span>
       </Link>
 
-      {/* Links */}
-      <div className='hidden text-slate-300 uppercase text-xs tracking-wider space-x-12 md:block'>
+      {/* navlinks */}
+      <div className={style.navlinks}>
         <Link href=''>
           <a>Home</a>
         </Link>
@@ -33,11 +33,11 @@ const index = () => {
         </Link>
       </div>
 
-      {/* Burger */}
-      <div className='space-y-1 cursor-pointer md:hidden'>
-        <div className='w-7 h-1 bg-slate-300 rounded-2xl'></div>
-        <div className='w-7 h-1 bg-slate-300 rounded-2xl'></div>
-        <div className='w-7 h-1 bg-slate-300 rounded-2xl'></div>
+      {/* Burger menu */}
+      <div className={style.burger}>
+        <div className={style.line}></div>
+        <div className={style.line}></div>
+        <div className={style.line}></div>
       </div>
     </nav>
   );
