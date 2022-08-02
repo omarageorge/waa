@@ -76,7 +76,10 @@ export default function Home() {
       </header>
 
       {/* Featured destinations */}
-      <main className='w-full h-auto py-12 bg-gray-100 sm:py-20'>
+      <section
+        id={style.destinations}
+        className='w-full h-auto pt-12 bg-gray-100 sm:pt-20'
+      >
         <div className='container px-10 mx-auto space-y-12'>
           <h2 className='text-3xl text-center text-gray-900 font-medium xl:text-left'>
             Popular travel destinations
@@ -122,7 +125,14 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </main>
+
+        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'>
+          <path d='M0,224L80,218.7C160,213,320,203,480,208C640,213,800,235,960,218.7C1120,203,1280,149,1360,122.7L1440,96L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z'></path>
+        </svg>
+      </section>
+
+      {/* Next section */}
+      <section className='w-full py-10  bg-slate-400'></section>
     </>
   );
 }

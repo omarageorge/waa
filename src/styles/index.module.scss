@@ -40,12 +40,23 @@
 }
 
 /* Popular places */
-#popular {
-  display: flex;
+#destinations {
+  position: relative;
+  overflow: hidden;
 
-  // column-gap: 2rem;
+  #popular {
+    display: flex;
 
-  #cols {
-    flex: 1;
+    // column-gap: 2rem;
+
+    #cols {
+      flex: 1;
+    }
+  }
+
+  svg {
+    fill: rgb(148 163 184);
+    fill-opacity: 1;
+    display: block;
   }
 }

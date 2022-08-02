@@ -5,7 +5,7 @@ const index = () => {
     <nav className='container px-10 mx-auto flex justify-between items-center pt-6'>
       {/* Logo */}
       <Link href='/'>
-        <span className='font-semibold text-2xl tracking-widest text-slate-300 cursor-pointer'>
+        <span className='font-semibold text-2xl tracking-widest text-slate-100 cursor-pointer'>
           WAA
         </span>
       </Link>
