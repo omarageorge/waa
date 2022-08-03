@@ -42,7 +42,7 @@ function NavBar() {
       >
         {hyperlinks.map((hyperlink, index) => (
           <Link key={index} href={hyperlink.link}>
-            <a>{hyperlink.title}</a>
+            <a onClick={() => setActive(false)}>{hyperlink.title}</a>
           </Link>
         ))}
       </div>
