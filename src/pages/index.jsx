@@ -55,15 +55,22 @@ export default function Home() {
 
           {/* Text  content */}
           <div className='container h-auto flex flex-col space-y-10 px-10 mx-auto'>
-            <h1 className=' font-medium text-5xl text-center text-blue-50 mx-auto md:mx-0 md:text-6xl md:text-left md:max-w-md'>
-              Take Off With Confidence
+            <h1 className=' font-medium text-5xl text-center leading-[3.8rem] text-blue-50 mx-auto md:mx-0 md:text-6xl md:text-left md:max-w-md md:leading-[5rem]'>
+              Fly Away With Confidence
             </h1>
+            {/* <h1 className=' font-medium text-5xl text-center text-blue-50 mx-auto md:mx-0 md:text-6xl md:text-left md:max-w-md'>
+              Take Off With Confidence
+            </h1> */}
 
             <p className='max-w-sm text-zinc-200 text-center mx-auto md:text-left md:mx-0'>
+              Allow us to convey you to your destination in powerful comfort and
+              luxury while giving you with an amazing flying experience.
+            </p>
+            {/* <p className='max-w-sm text-zinc-200 text-center mx-auto md:text-left md:mx-0'>
               Let us to give you with an exceptional flying experience by
               providing you with strong comfort and luxury as we transport you
               to your destination.
-            </p>
+            </p> */}
 
             {/* Call to action */}
             <Link href=''>
@@ -78,7 +85,7 @@ export default function Home() {
       {/* Featured destinations */}
       <section
         id={style.destinations}
-        className='w-full h-auto pt-12 bg-gray-100 sm:pt-20'
+        className='w-full h-auto pt-12 bg-gray-50 sm:pt-20'
       >
         <div className='container px-10 mx-auto space-y-12'>
           <h2 className='text-3xl text-center text-gray-900 font-medium xl:text-left'>
