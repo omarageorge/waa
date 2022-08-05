@@ -64,10 +64,10 @@ export default function Home() {
 
             <p className='max-w-sm text-zinc-200 text-center mx-auto md:text-left md:mx-0'>
               Allow us to convey you to your destination in powerful comfort and
-              luxury while giving you with an amazing flying experience.
+              luxury while giving you an astounding flying experience.
             </p>
             {/* <p className='max-w-sm text-zinc-200 text-center mx-auto md:text-left md:mx-0'>
-              Let us to give you with an exceptional flying experience by
+              Allow us to give you an exceptional flying experience by
               providing you with strong comfort and luxury as we transport you
               to your destination.
             </p> */}
