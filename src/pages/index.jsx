@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Typewriter from 'typewriter-effect';
 
 import Meta from '../components/Meta';
 import NavBar from '../components/NavBar';
@@ -56,8 +57,22 @@ export default function Home() {
           {/* Text  content */}
           <div className='container h-auto flex flex-col space-y-10 px-10 mx-auto'>
             <h1 className=' font-medium text-5xl text-center leading-[3.8rem] text-blue-50 mx-auto md:mx-0 md:text-6xl md:text-left md:max-w-md md:leading-[5rem]'>
-              Fly Away With Confidence
+              <Typewriter
+                options={{
+                  strings: [
+                    'Westminster Atlantic Airlines',
+                    'Fly Off With Confidence',
+                  ],
+                  autoStart: true,
+                  delay: 100,
+                  loop: true,
+                }}
+              />
             </h1>
+            {/* <h1 className=' font-medium text-5xl text-center leading-[3.8rem] text-blue-50 mx-auto md:mx-0 md:text-6xl md:text-left md:max-w-md md:leading-[5rem]'>
+              Fly Off With Confidence
+            </h1> */}
+
             {/* <h1 className=' font-medium text-5xl text-center text-blue-50 mx-auto md:mx-0 md:text-6xl md:text-left md:max-w-md'>
               Take Off With Confidence
             </h1> */}
@@ -73,8 +88,11 @@ export default function Home() {
             </p> */}
 
             {/* Call to action */}
-            <Link href=''>
-              <a className='block w-32 text-center py-5 mx-auto rounded-full shadow-xl text-white font-medium bg-red-500 hover:bg-red-600 opacity-70 transition-all delay-300 ease-linear md:mx-0 '>
+            <Link href='https://www.turkishairlines.com/en-int/flights/booking'>
+              <a
+                target='_blank'
+                className='block w-32 text-center py-5 mx-auto rounded-full shadow-xl text-white font-medium bg-red-500 hover:bg-red-600 opacity-70 transition-all delay-300 ease-linear md:mx-0 '
+              >
                 Book Now
               </a>
             </Link>
@@ -85,7 +103,7 @@ export default function Home() {
       {/* Featured destinations */}
       <section
         id={style.destinations}
-        className='w-full h-auto pt-12 bg-gray-50 sm:pt-20'
+        className='w-full h-auto pt-12 bg-gray-100 sm:pt-20'
       >
         <div className='container px-10 mx-auto space-y-12'>
           <h2 className='text-3xl text-center text-gray-900 font-medium xl:text-left'>
@@ -139,7 +157,52 @@ export default function Home() {
       </section>
 
       {/* Next section */}
-      <section className='w-full py-10  bg-slate-400'></section>
+      <section className='w-full pb-16  bg-slate-800'>
+        {/* Row */}
+        <div className='container mx-auto px-10 flex flex-col md:flex-row '>
+          {/* Col 1 */}
+          <div className='flex-1'>
+            <h2 className='text-3xl text-center text-gray-200 font-medium xl:text-left'>
+              About us
+            </h2>
+            <p className='text-gray-300 pt-8'>
+              Westminster Atlantic Airlines is an airline alliance that
+              collaborates with other airlines. Our mission is to provide people
+              with an exceptional flying experience while also training the next
+              generation of highly skilled pilots.Captain Allen founded the
+              company in 2020, though the concept had been around since 2016.
+              The airlines were joined by other airlines near the end of 2021,
+              similar to how Kenya Airways, founded in 1977, began working with
+              South African Airways 2021.
+            </p>
+
+            <p className='text-gray-300 pt-4'>
+              Captain Allen is a French Congolese from the Democratic Republic
+              of the Congo. His ambition to become a pilot began at the age of
+              ten. He grew up near several airports, one of which was
+              N&apos;djili Airport, which is located in Kinshasa in the city of
+              N&apos;djili. Another airport close to his primary school was
+              known as the Airport of Ndolo. Captain Allen and his childhood
+              friends used to go to these airports to watch planes take off and
+              land, which fueled his desire to become a pilot.
+            </p>
+
+            <p className='text-gray-300 pt-4'>
+              He spent a significant amount of time in France, where he met many
+              Pilots and other people involved in Aviation service, which
+              inspired him even more to become a Pilot. He began his aviation
+              training in Kinshasa and continued in France and the United
+              Kingdom in London. He spent the majority of his flying career in
+              Europe and Africa.
+            </p>
+
+            <p className='text-gray-300 pt-4'></p>
+          </div>
+
+          {/* Col 2 */}
+          <div className='flex-1'></div>
+        </div>
+      </section>
     </>
   );
 }
