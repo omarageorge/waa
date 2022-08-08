@@ -2,14 +2,16 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Typewriter from 'typewriter-effect';
 import Slide from 'react-reveal/Slide';
+import Fade from 'react-reveal/Fade';
 
+import { Card, BigCard } from '../components/Card';
 import Meta from '../components/Meta';
 import NavBar from '../components/NavBar';
-import { Card, BigCard } from '../components/Card';
-import Paragraph from '../components/Paragraph';
+import Container from '../components/Container';
+import { Paragraph, PureParagraph } from '../components/Paragraph';
 import aboutImage from '../assets/about.jpg';
+import Subtitle from '../components/Subtitle';
 import style from '../styles/index.module.scss';
-import { Fade } from 'react-reveal';
 
 export default function Home() {
   const places = [
@@ -107,74 +109,71 @@ export default function Home() {
       </header>
 
       {/* Popular destinations */}
-      <section
-        id={style.destinations}
-        className='w-full h-auto pt-12 bg-gray-100 sm:pt-20'
-      >
-        <div className='container px-10 mx-auto space-y-12'>
-          <Slide bottom>
-            <h2 className='text-3xl text-center text-gray-900 font-medium xl:text-left'>
+      <main id='popular'>
+        <section
+          id={`${style.destinations}`}
+          className='w-full h-auto pt-12 bg-gray-100 sm:pt-20'
+        >
+          <Container style='space-y-12'>
+            <Subtitle color='text-gray-900'>
               Popular travel destinations
-            </h2>
-          </Slide>
+            </Subtitle>
 
-          {/* Popular destinations */}
-          <div id={style.popular}>
-            {/* Most popular */}
-            <div id={style.cols} className='hidden xl:block'>
-              <BigCard
-                image={places[0].image}
-                destination={places[0].destination}
-                price={places[0].price}
-              />
-            </div>
-
-            {/* Others */}
-            <div
-              id={style.cols}
-              className='w-full grid grid-cols-1 gap-y-10 justify-items-center sm:grid-cols-2'
-            >
-              {/* Most popular smaller card */}
-              <div className='xl:hidden'>
-                <Card
+            {/* Popular destinations */}
+            <div id={style.popular}>
+              {/* Most popular */}
+              <div id={style.cols} className='hidden xl:block'>
+                <BigCard
                   image={places[0].image}
                   destination={places[0].destination}
                   price={places[0].price}
                 />
               </div>
 
-              {places.map((place, index) => {
-                if (index !== 0) {
-                  return (
-                    <Card
-                      key={index}
-                      image={place.image}
-                      destination={place.destination}
-                      price={place.price}
-                    />
-                  );
-                }
-              })}
-            </div>
-          </div>
-        </div>
+              {/* Others */}
+              <div
+                id={style.cols}
+                className='w-full grid grid-cols-1 gap-y-10 justify-items-center sm:grid-cols-2'
+              >
+                {/* Most popular smaller card */}
+                <div className='xl:hidden'>
+                  <Card
+                    image={places[0].image}
+                    destination={places[0].destination}
+                    price={places[0].price}
+                  />
+                </div>
 
-        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'>
-          <path d='M0,224L80,218.7C160,213,320,203,480,208C640,213,800,235,960,218.7C1120,203,1280,149,1360,122.7L1440,96L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z'></path>
-        </svg>
-      </section>
+                {places.map((place, index) => {
+                  if (index !== 0) {
+                    return (
+                      <Card
+                        key={index}
+                        image={place.image}
+                        destination={place.destination}
+                        price={place.price}
+                      />
+                    );
+                  }
+                })}
+              </div>
+            </div>
+          </Container>
+
+          <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'>
+            <path d='M0,224L80,218.7C160,213,320,203,480,208C640,213,800,235,960,218.7C1120,203,1280,149,1360,122.7L1440,96L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z'></path>
+          </svg>
+        </section>
+      </main>
 
       {/* About section */}
-      <section id='about' className='w-full pb-16 pt-10  bg-slate-800 md:pt-0'>
+      <section id='about' className='w-full pt-10  bg-slate-800 md:pt-0'>
         {/* Row */}
-        <div className='container mx-auto px-10 flex flex-col md:flex-row '>
+        <Container style='flex flex-col md:flex-row '>
           {/* Col 1 */}
           <div className='flex-1'>
-            <Slide bottom>
-              <h2 className='text-3xl text-center text-gray-200 font-medium xl:text-left'>
-                About us
-              </h2>
-            </Slide>
+            <Subtitle color='text-gray-200'>About us</Subtitle>
+
             <Paragraph>
               Westminster Atlantic Airlines is an airline alliance that
               collaborates with other airlines. Our mission is to provide people
@@ -233,8 +232,38 @@ export default function Home() {
               </div>
             </Fade>
           </div>
-        </div>
+        </Container>
+        <svg
+          className='block'
+          xmlns='http://www.w3.org/2000/svg'
+          viewBox='0 0 1440 320'
+        >
+          <path
+            className='fill-slate-900 opacity-100'
+            d='M0,192L1440,256L1440,320L0,320Z'
+          ></path>
+        </svg>
       </section>
+
+      {/* Policy */}
+      <section id='policy' className='bg-slate-900 pb-20'>
+        <Container>
+          <Subtitle color='text-gray-200'>Our policy</Subtitle>
+
+          <PureParagraph style='text-gray-400 leading-[1.6rem] pt-6'>
+            If you have a medical condition, please let us know when you make
+            your flight reservation. To be safe, we recommend paying an
+            additional fee on top of the ticket price to protect yourself if you
+            miss a flight. The additional fee will guarantee either a refund of
+            the ticket price or the ability to reschedule the flight if you miss
+            it. Incase you wish to cancel your flight, we recommend doing so at
+            least 24 hours or latest 8 hours before your flight departure.
+          </PureParagraph>
+        </Container>
+      </section>
+
+      {/* Contact */}
+      <section id='contact'></section>
     </>
   );
 }
