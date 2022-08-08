@@ -165,7 +165,7 @@ export default function Home() {
       </section>
 
       {/* About section */}
-      <section id='about' className='w-full pb-16  bg-slate-800'>
+      <section id='about' className='w-full pb-16 pt-10  bg-slate-800 md:pt-0'>
         {/* Row */}
         <div className='container mx-auto px-10 flex flex-col md:flex-row '>
           {/* Col 1 */}
