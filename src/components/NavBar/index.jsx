@@ -10,8 +10,9 @@ function NavBar() {
 
   const hyperlinks = [
     { title: 'Home', link: '/' },
-    { title: 'About', link: '/about' },
-    { title: 'Gallery', link: '/gallery' },
+    { title: 'Popular', link: '/popular' },
+    { title: 'About', link: '/#about' },
+    // { title: 'Gallery', link: '/gallery' },
     { title: 'Policy', link: '/policy' },
     { title: 'Contact', link: '/contact' },
   ];
