@@ -1,9 +1,13 @@
 import Fade from 'react-reveal/Fade';
 
-const Paragraph = ({ children }) => (
+export const Paragraph = ({ children }) => (
   <Fade>
     <p className='text-gray-300  pt-8'>{children}</p>
   </Fade>
 );
 
-export default Paragraph;
+export const PureParagraph = ({ children, style }) => (
+  <Fade>
+    <p className={`${style}`}>{children}</p>
+  </Fade>
+);
