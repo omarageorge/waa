@@ -1,9 +1,12 @@
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
+
 import style from './styles.module.scss';
 
 function NavBar() {
   const [active, setActive] = useState(false);
+  const router = useRouter();
 
   const hyperlinks = [
     { title: 'Home', link: '/' },
@@ -42,7 +45,14 @@ function NavBar() {
       >
         {hyperlinks.map((hyperlink, index) => (
           <Link key={index} href={hyperlink.link}>
-            <a onClick={() => setActive(false)}>{hyperlink.title}</a>
+            <a
+              onClick={() => setActive(false)}
+              className={`${
+                router.pathname === hyperlink.link && 'bg-gray-200'
+              }`}
+            >
+              {hyperlink.title}
+            </a>
           </Link>
         ))}
       </div>

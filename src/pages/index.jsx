@@ -1,14 +1,15 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import Typewriter from 'typewriter-effect';
 import Slide from 'react-reveal/Slide';
-import Fade from 'react-reveal/Fade';
 
 import Meta from '../components/Meta';
 import NavBar from '../components/NavBar';
 import { Card, BigCard } from '../components/Card';
 import Paragraph from '../components/Paragraph';
-
+import aboutImage from '../assets/about.jpg';
 import style from '../styles/index.module.scss';
+import { Fade } from 'react-reveal';
 
 export default function Home() {
   const places = [
@@ -185,6 +186,17 @@ export default function Home() {
               South African Airways 2021.
             </Paragraph>
 
+            <div className='pt-8 md:hidden  '>
+              <Fade>
+                <Image
+                  src={aboutImage}
+                  placeholder='blur'
+                  alt='Captain Allen'
+                  style={{ borderRadius: '10px' }}
+                />
+              </Fade>
+            </div>
+
             <Paragraph>
               Captain Allen is a French Congolese from the Democratic Republic
               of the Congo. His ambition to become a pilot began at the age of
@@ -209,7 +221,18 @@ export default function Home() {
           </div>
 
           {/* Col 2 */}
-          <div className='flex-1'></div>
+          <div className='hidden flex-1  items-center justify-center pt-12 md:flex'>
+            <Fade>
+              <div className='w-[90%]'>
+                <Image
+                  src={aboutImage}
+                  placeholder='blur'
+                  alt='Captain Allen'
+                  style={{ borderRadius: '10px' }}
+                />
+              </div>
+            </Fade>
+          </div>
         </div>
       </section>
     </>
