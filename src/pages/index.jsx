@@ -5,6 +5,7 @@ import Slide from 'react-reveal/Slide';
 import Fade from 'react-reveal/Fade';
 
 import { Card, BigCard } from '../components/Card';
+import { Row, Column } from '../components/Flex';
 import Meta from '../components/Meta';
 import NavBar from '../components/NavBar';
 import Container from '../components/Container';
@@ -168,70 +169,72 @@ export default function Home() {
 
       {/* About section */}
       <section id='about' className='w-full pt-10  bg-slate-800 md:pt-0'>
-        {/* Row */}
-        <Container style='flex flex-col md:flex-row '>
-          {/* Col 1 */}
-          <div className='flex-1'>
-            <Subtitle color='text-gray-200'>About us</Subtitle>
+        <Container>
+          {/* Row */}
+          <Row>
+            {/* Col 1 */}
+            <Column>
+              <Subtitle color='text-gray-200'>About us</Subtitle>
 
-            <Paragraph>
-              Westminster Atlantic Airlines is an airline alliance that
-              collaborates with other airlines. Our mission is to provide people
-              with an exceptional flying experience while also training the next
-              generation of highly skilled pilots.Captain Allen founded the
-              company in 2020, though the concept had been around since 2016.
-              The airlines were joined by other airlines near the end of 2021,
-              similar to how Kenya Airways, founded in 1977, began working with
-              South African Airways 2021.
-            </Paragraph>
+              <Paragraph>
+                Westminster Atlantic Airlines is an airline alliance that
+                collaborates with other airlines. Our mission is to provide
+                people with an exceptional flying experience while also training
+                the next generation of highly skilled pilots.Captain Allen
+                founded the company in 2020, though the concept had been around
+                since 2016. The airlines were joined by other airlines near the
+                end of 2021, similar to how Kenya Airways, founded in 1977,
+                began working with South African Airways 2021.
+              </Paragraph>
 
-            <div className='pt-8 md:hidden  '>
-              <Fade>
-                <Image
-                  src={aboutImage}
-                  placeholder='blur'
-                  alt='Captain Allen'
-                  style={{ borderRadius: '10px' }}
-                />
-              </Fade>
-            </div>
-
-            <Paragraph>
-              Captain Allen is a French Congolese from the Democratic Republic
-              of the Congo. His ambition to become a pilot began at the age of
-              ten. He grew up near several airports, one of which was
-              N&apos;djili Airport, which is located in Kinshasa in the city of
-              N&apos;djili. Another airport close to his primary school was
-              known as the Airport of Ndolo. Captain Allen and his childhood
-              friends used to go to these airports to watch planes take off and
-              land, which fueled his desire to become a pilot.
-            </Paragraph>
-
-            <Paragraph>
-              He spent a significant amount of time in France, where he met many
-              Pilots and other people involved in Aviation service, which
-              inspired him even more to become a Pilot. He began his aviation
-              training in Kinshasa and continued in France and the United
-              Kingdom in London. He spent the majority of his flying career in
-              Europe and Africa.
-            </Paragraph>
-
-            <p className='text-gray-300 pt-4'></p>
-          </div>
-
-          {/* Col 2 */}
-          <div className='hidden flex-1  items-center justify-center pt-12 md:flex'>
-            <Fade>
-              <div className='w-[90%]'>
-                <Image
-                  src={aboutImage}
-                  placeholder='blur'
-                  alt='Captain Allen'
-                  style={{ borderRadius: '10px' }}
-                />
+              <div className='pt-8 md:hidden text-gray-700 '>
+                <Fade>
+                  <Image
+                    src={aboutImage}
+                    placeholder='blur'
+                    alt='Captain Allen'
+                    style={{ borderRadius: '10px' }}
+                  />
+                </Fade>
               </div>
-            </Fade>
-          </div>
+
+              <Paragraph>
+                Captain Allen is a French Congolese from the Democratic Republic
+                of the Congo. His ambition to become a pilot began at the age of
+                ten. He grew up near several airports, one of which was
+                N&apos;djili Airport, which is located in Kinshasa in the city
+                of N&apos;djili. Another airport close to his primary school was
+                known as the Airport of Ndolo. Captain Allen and his childhood
+                friends used to go to these airports to watch planes take off
+                and land, which fueled his desire to become a pilot.
+              </Paragraph>
+
+              <Paragraph>
+                He spent a significant amount of time in France, where he met
+                many Pilots and other people involved in Aviation service, which
+                inspired him even more to become a Pilot. He began his aviation
+                training in Kinshasa and continued in France and the United
+                Kingdom in London. He spent the majority of his flying career in
+                Europe and Africa.
+              </Paragraph>
+
+              <p className='text-gray-300 pt-4'></p>
+            </Column>
+
+            {/* Col 2 */}
+            <Column style='hidden items-center justify-center pt-12 md:flex'>
+              <Fade>
+                <div className='w-[90%]'>
+                  <Image
+                    src={aboutImage}
+                    placeholder='blur'
+                    alt='Captain Allen'
+                    style={{ borderRadius: '10px' }}
+                  />
+                </div>
+              </Fade>
+            </Column>
+          </Row>
         </Container>
         <svg
           className='block'
@@ -248,22 +251,57 @@ export default function Home() {
       {/* Policy */}
       <section id='policy' className='bg-slate-900 pb-20'>
         <Container>
-          <Subtitle color='text-gray-200'>Our policy</Subtitle>
+          {/* Row */}
+          <Row>
+            {/* Column 1 */}
+            <Column style='pb-14  md:pb-0'>
+              <Subtitle color='text-gray-200'>Send us a message</Subtitle>
 
-          <PureParagraph style='text-gray-400 leading-[1.6rem] pt-6'>
-            If you have a medical condition, please let us know when you make
-            your flight reservation. To be safe, we recommend paying an
-            additional fee on top of the ticket price to protect yourself if you
-            miss a flight. The additional fee will guarantee either a refund of
-            the ticket price or the ability to reschedule the flight if you miss
-            it. Incase you wish to cancel your flight, we recommend doing so at
-            least 24 hours or latest 8 hours before your flight departure.
-          </PureParagraph>
+              <form id={style.message}>
+                <div id='contact'>
+                  <input type='text' name='name' placeholder='Name' />
+                </div>
+
+                <div>
+                  <input type='email' name='email' placeholder='Email' />
+                </div>
+
+                <div>
+                  <textarea name='message' placeholder='Message'></textarea>
+                </div>
+
+                <div>
+                  <button>Send</button>
+                </div>
+              </form>
+            </Column>
+
+            {/* Column 2 */}
+            <Column>
+              <Subtitle color='text-gray-200'>Our policy</Subtitle>
+
+              <PureParagraph style='text-gray-400 leading-[1.6rem] pt-6'>
+                If you have a medical condition, please let us know when you
+                make your flight reservation. To be safe, we recommend paying an
+                additional fee on top of the ticket price to protect yourself if
+                you miss a flight. The additional fee will guarantee either a
+                refund of the ticket price or the ability to reschedule the
+                flight if you miss it. Incase you wish to cancel your flight, we
+                recommend doing so at least 24 hours or latest 8 hours before
+                your flight departure.
+              </PureParagraph>
+            </Column>
+          </Row>
         </Container>
       </section>
 
-      {/* Contact */}
-      <section id='contact'></section>
+      {/* Footer */}
+      <footer className='py-6 text-center text-white bg-black'>
+        <span className=''>
+          Copyright &copy; {new Date().getFullYear()} Westminster Atlantic
+          Airlines
+        </span>
+      </footer>
     </>
   );
 }
