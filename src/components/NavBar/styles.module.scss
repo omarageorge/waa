@@ -1,5 +1,5 @@
 .navbar {
-  @apply h-16  px-10 mx-auto flex justify-between items-center  transition-all delay-200 ease-in-out md:bg-transparent md:shadow-none;
+  @apply h-16 px-10 mx-auto flex justify-between items-center  transition-all delay-200 ease-in-out md:pt-2 md:bg-transparent md:shadow-none;
 
   .logo {
     @apply font-semibold text-2xl tracking-widest cursor-pointer transition-all delay-500 ease-in md:text-gray-100;
