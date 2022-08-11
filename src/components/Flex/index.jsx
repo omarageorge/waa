@@ -1,5 +1,9 @@
 export const Row = ({ style, children }) => {
-  return <div className={`flex flex-col ${style} md:flex-row`}>{children}</div>;
+  return (
+    <div className={`flex flex-col-reverse ${style} md:flex-row`}>
+      {children}
+    </div>
+  );
 };
 
 export const Column = ({ style, children }) => {

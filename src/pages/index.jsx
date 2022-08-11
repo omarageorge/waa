@@ -254,7 +254,7 @@ export default function Home() {
           {/* Row */}
           <Row>
             {/* Column 1 */}
-            <Column style='pb-14  md:pb-0'>
+            <Column style='pt-12 md:pt-0'>
               <Subtitle color='text-gray-200'>Send us a message</Subtitle>
 
               <form id={style.message}>
