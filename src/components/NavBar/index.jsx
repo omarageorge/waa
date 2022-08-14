@@ -25,7 +25,7 @@ function NavBar({ dark }) {
     <nav
       className={`${style.navbar} ${active === true && 'bg-white shadow-2xl'} ${
         dark ? 'md:shadow-sm' : 'md:shadow-none'
-      } `}
+      }`}
     >
       {/* Logo */}
       <Link href='/'>
