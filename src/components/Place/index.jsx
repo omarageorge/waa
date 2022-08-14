@@ -13,7 +13,7 @@ function Place({ image, name }) {
           layout='responsive'
           objectFit='cover'
           alt=''
-          className={'image'}
+          loading='priority'
         />
       </div>
 
