@@ -1,5 +1,9 @@
 const gallery = () => {
-  return <div>gallery</div>;
+  return (
+    <>
+      <header></header>
+    </>
+  );
 };
 
 export default gallery;
