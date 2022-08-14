@@ -12,6 +12,7 @@ function NavBar() {
     { title: 'Home', link: '/' },
     { title: 'Popular', link: '/#popular' },
     { title: 'About', link: '/#about' },
+    { title: 'Gallery', link: '/gallery' },
     { title: 'Policy', link: '/#policy' },
     { title: 'Contact', link: '/#contact' },
   ];
