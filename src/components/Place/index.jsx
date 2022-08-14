@@ -3,16 +3,20 @@ import style from './place.module.scss';
 
 function Place({ image, name }) {
   return (
-    <div
-      id={style.wrapper}
-      className='bg-gray-100'
-      style={{
-        backgroundImage: `url(${image})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-      }}
-    >
+    <div id={style.wrapper} className='bg-gray-100'>
+      {/* Background Image */}
+      <div className={style.image}>
+        <Image
+          src={image}
+          width='100%'
+          height='100%'
+          layout='responsive'
+          objectFit='cover'
+          alt=''
+          className={'image'}
+        />
+      </div>
+
       {/* Overlay */}
       <div id={style.content}></div>
 

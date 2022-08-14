@@ -5,16 +5,22 @@
 
   @apply w-[90%] h-[12rem] rounded-lg md:w-[100%] lg:h-[25rem];
 
-  #content {
+  .image {
     position: absolute;
     z-index: 1;
+
+    @apply w-full h-full;
+  }
+  #content {
+    position: absolute;
+    z-index: 2;
 
     @apply w-full h-full bg-black opacity-30;
   }
 
   #text {
     position: absolute;
-    z-index: 2;
+    z-index: 3;
 
     @apply w-full h-full;
 
