@@ -76,13 +76,6 @@ export default function Home() {
                 }}
               />
             </h1>
-            {/* <h1 className=' font-medium text-5xl text-center leading-[3.8rem] text-blue-50 mx-auto md:mx-0 md:text-6xl md:text-left md:max-w-md md:leading-[5rem]'>
-              Fly Off With Confidence
-            </h1> */}
-
-            {/* <h1 className=' font-medium text-5xl text-center text-blue-50 mx-auto md:mx-0 md:text-6xl md:text-left md:max-w-md'>
-              Take Off With Confidence
-            </h1> */}
 
             <Slide bottom>
               <p className='max-w-sm text-zinc-200 text-center mx-auto md:text-left md:mx-0'>
@@ -90,11 +83,6 @@ export default function Home() {
                 and luxury while giving you an astounding flying experience.
               </p>
             </Slide>
-            {/* <p className='max-w-sm text-zinc-200 text-center mx-auto md:text-left md:mx-0'>
-              Allow us to give you an exceptional flying experience by
-              providing you with strong comfort and luxury as we transport you
-              to your destination.
-            </p> */}
 
             {/* Call to action */}
             <Link href='https://www.turkishairlines.com/en-int/flights/booking'>
