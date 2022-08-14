@@ -12,6 +12,8 @@ import Container from '../components/Container';
 import { Paragraph, PureParagraph } from '../components/Paragraph';
 import aboutImage from '../assets/about.jpg';
 import Subtitle from '../components/Subtitle';
+import Footer from '../components/Footer';
+
 import style from '../styles/index.module.scss';
 
 export default function Home() {
@@ -284,12 +286,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className='py-6 text-center text-white bg-black'>
-        <span className=''>
-          Copyright &copy; {new Date().getFullYear()} Westminster Atlantic
-          Airlines
-        </span>
-      </footer>
+      <Footer />
     </>
   );
 }
