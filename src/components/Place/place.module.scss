@@ -1,0 +1,29 @@
+#wrapper {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+
+  @apply w-[90%] h-[12rem] rounded-lg md:w-[100%] lg:h-[25rem];
+
+  #content {
+    position: absolute;
+    z-index: 1;
+
+    @apply w-full h-full bg-black opacity-30;
+  }
+
+  #text {
+    position: absolute;
+    z-index: 2;
+
+    @apply w-full h-full;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      @apply text-white text-3xl text-center font-bold sm:text-5xl;
+    }
+  }
+}
