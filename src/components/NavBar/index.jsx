@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import style from './styles.module.scss';
 
-function NavBar() {
+function NavBar({ dark }) {
   const [active, setActive] = useState(false);
   const router = useRouter();
 
@@ -23,16 +23,24 @@ function NavBar() {
 
   return (
     <nav
-      className={`${style.navbar} ${active === true && 'bg-white shadow-2xl'}`}
+      className={`${style.navbar} ${active === true && 'bg-white shadow-2xl'} ${
+        dark ? 'md:shadow-sm' : 'md:shadow-none'
+      } `}
     >
       {/* Logo */}
       <Link href='/'>
         <span
           className={`${style.logo} ${
-            active === true
+            active
+              ? 'text-transparent bg-clip-text bg-gradient-to-tr from-purple-400 to-pink-600'
+              : dark
               ? 'text-transparent bg-clip-text bg-gradient-to-tr from-purple-400 to-pink-600'
               : 'text-gray-100'
-          }`}
+          }  ${
+            dark
+              ? 'md:text-transparent md:bg-clip-text md:bg-gradient-to-tr md:from-purple-400 md:to-pink-600'
+              : 'md:text-gray-100'
+          } `}
         >
           WAA
         </span>
@@ -50,7 +58,7 @@ function NavBar() {
               onClick={() => setActive(false)}
               className={`${
                 router.pathname === hyperlink.link && 'bg-gray-200'
-              }`}
+              } ${dark ? 'md:text-gray-800' : 'md:text-gray-200'}`}
             >
               {hyperlink.title}
             </a>
@@ -64,18 +72,26 @@ function NavBar() {
           className={`line1 ${
             active === true
               ? 'bg-gray-500 -rotate-45 translate-x-[-5px] translate-y-[6px]'
+              : dark
+              ? 'bg-gray-500 '
               : 'bg-gray-200'
           }`}
         ></div>
         <div
           className={`line2 ${
-            active === true ? 'bg-gray-500 opacity-0' : 'bg-gray-200'
+            active === true
+              ? 'bg-gray-500 opacity-0'
+              : dark
+              ? 'bg-gray-500 '
+              : 'bg-gray-200'
           }`}
         ></div>
         <div
           className={`line3 ${
             active === true
               ? 'bg-gray-500 rotate-45 translate-x-[-5px] translate-y-[-6px]'
+              : dark
+              ? 'bg-gray-500 '
               : 'bg-gray-200'
           }`}
         ></div>

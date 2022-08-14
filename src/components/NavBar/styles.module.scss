@@ -1,15 +1,15 @@
 .navbar {
-  @apply h-16 px-10 mx-auto flex justify-between items-center  transition-all delay-200 ease-in-out md:pt-2 md:bg-transparent md:shadow-none;
+  @apply h-16 px-10 mx-auto flex justify-between items-center  transition-all delay-200 ease-in-out md:pt-2 md:bg-transparent;
 
   .logo {
-    @apply font-semibold text-2xl tracking-widest cursor-pointer transition-all delay-500 ease-in md:text-gray-100;
+    @apply font-semibold text-2xl tracking-widest cursor-pointer transition-all delay-500 ease-in;
   }
 
   .navlinks {
     @apply absolute z-50 top-16 left-0 w-full h-full bg-gray-100 flex flex-col gap-y-5 pt-5 px-2 transition-transform delay-300 ease-out md:relative md:z-0 md:top-0 md:w-auto md:h-full md:space-x-12 md:bg-transparent md:flex-row  md:gap-y-0;
 
     a {
-      @apply uppercase text-xs tracking-wider py-4 pl-8 rounded-md transition-colors delay-200 hover:bg-gray-200 md:text-gray-200  md:py-0 md:pl-0 md:bg-transparent md:hover:bg-transparent;
+      @apply uppercase text-xs tracking-wider py-4 pl-8 rounded-md transition-colors delay-200 hover:bg-gray-200 md:py-0 md:pl-0 md:bg-transparent md:hover:bg-transparent;
     }
   }
 
