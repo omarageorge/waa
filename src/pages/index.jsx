@@ -10,11 +10,14 @@ import Meta from '../components/Meta';
 import NavBar from '../components/NavBar';
 import Container from '../components/Container';
 import { Paragraph, PureParagraph } from '../components/Paragraph';
-import aboutImage from '../assets/about.jpg';
 import Subtitle from '../components/Subtitle';
 import Footer from '../components/Footer';
 
+import aboutImage from '../assets/about.jpg';
 import style from '../styles/index.module.scss';
+
+import cheapoiair from '../assets/partners/cheapoiair.png';
+import turkish from '../assets/partners/turkish.png';
 
 export default function Home() {
   const places = [
@@ -158,7 +161,7 @@ export default function Home() {
       </main>
 
       {/* About section */}
-      <section id='about' className='w-full pt-10  bg-slate-800 md:pt-0'>
+      <section id='about' className='w-full  pt-10  bg-slate-800 md:pt-0'>
         <Container>
           {/* Row */}
           <Row>
@@ -225,6 +228,46 @@ export default function Home() {
               </Fade>
             </Column>
           </Row>
+
+          {/* Partners */}
+          <div className='w-full h-auto bg-gray-800 mt-20'>
+            <Subtitle color='text-gray-200' center>
+              Our Partners
+            </Subtitle>
+
+            <p className='font-light text-md text-gray-300 text-center mt-4'>
+              You may book flights through our partners
+            </p>
+
+            <div className='grid grid-cols-1 gap-8 mt-8 md:grid-cols-2 lg:md:grid-cols-3'>
+              <Link href='https://www.cheapoair.com/flights/booknow/airlines'>
+                <a
+                  target='_blank'
+                  className='flex  items-center justify-center w-full h-44 bg-white m-auto rounded-md overflow-hidden'
+                >
+                  <Image src={cheapoiair} width='250px' height='100px' alt='' />
+                </a>
+              </Link>
+
+              <Link href='#'>
+                <a
+                  target='_blank'
+                  className='flex  items-center justify-center w-full h-44 bg-white m-auto rounded-md overflow-hidden'
+                >
+                  <Image src={turkish} width='260px' height='70px' alt='' />
+                </a>
+              </Link>
+
+              <Link href='#'>
+                <a
+                  target='_blank'
+                  className='flex  items-center justify-center w-full h-44 bg-white m-auto rounded-md overflow-hidden'
+                >
+                  <Image src={turkish} width='260px' height='70px' alt='' />
+                </a>
+              </Link>
+            </div>
+          </div>
         </Container>
         <svg
           className='block'
@@ -239,6 +282,7 @@ export default function Home() {
       </section>
 
       {/* Policy */}
+
       <section id='policy' className='bg-slate-900 pb-20'>
         <Container>
           {/* Row */}
