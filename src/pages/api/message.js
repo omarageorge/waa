@@ -1,12 +1,12 @@
-import sendMail from '../../mail/sendMail';
-import messageTemplate from '../../mail/messageTemplate';
+import mailer from '../../mail/mailer';
+import htmlTemplate from '../../mail/htmlTemplate';
 
 export default function handler(req, res) {
   if (req.method === 'POST') {
-    const messageDetails = messageTemplate(req.body);
+    const messageDetails = htmlTemplate(req.body);
 
     try {
-      sendMail(messageDetails.subject, messageDetails.html);
+      mailer(messageDetails.subject, messageDetails.html);
       res.status(200).json({ status: 'OK' });
     } catch (err) {
       console.log(err.message);

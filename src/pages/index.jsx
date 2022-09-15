@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Typewriter from 'typewriter-effect';
 import Slide from 'react-reveal/Slide';
 import Fade from 'react-reveal/Fade';
-import SyncLoader from 'react-spinners/SyncLoader';
+import PulseLoader from 'react-spinners/PulseLoader';
 
 import { Card, BigCard } from '../components/Card';
 import { Row, Column } from '../components/Flex';
@@ -51,7 +51,7 @@ export default function Home() {
     },
   ];
 
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const [message, setMessage] = useState({
     name: '',
@@ -66,8 +66,11 @@ export default function Home() {
   const handleFormSubmission = async (e) => {
     e.preventDefault();
 
+    setLoading(true);
+
     try {
       await axios.post('/api/message', message);
+      setLoading(false);
       setMessage({ ...message, name: '', email: '', message: '' });
     } catch (error) {
       console.error(error.message);
@@ -349,7 +352,7 @@ export default function Home() {
 
                 <div>
                   <button type='submit' disabled={loading ? true : false}>
-                    {loading ? <SyncLoader color='white' size={8} /> : 'Send'}
+                    {loading ? <PulseLoader color='white' size={8} /> : 'Send'}
                   </button>
                 </div>
               </form>

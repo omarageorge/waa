@@ -1,3 +1,5 @@
+const nodemailer = require('nodemailer');
+
 export default async function sendMail(subject, htmlTemplate) {
   let transporter = nodemailer.createTransport({
     host: 'mail.privateemail.com',
@@ -9,7 +11,7 @@ export default async function sendMail(subject, htmlTemplate) {
     },
   });
   let mailOptions = {
-    from: '"LOREMI TOURS" <info@loremitours.com>',
+    from: '"WAA Website" <info@loremitours.com>',
     to: 'georgeomara8@gmail.com',
     // to: ['Airlinewaacompany@gmail.com', 'Airlinewaa@gmail.com'],
     subject: subject,
