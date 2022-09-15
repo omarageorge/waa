@@ -1,8 +1,11 @@
+import { useState } from 'react';
+import axios from 'axios';
 import Link from 'next/link';
 import Image from 'next/image';
 import Typewriter from 'typewriter-effect';
 import Slide from 'react-reveal/Slide';
 import Fade from 'react-reveal/Fade';
+import SyncLoader from 'react-spinners/SyncLoader';
 
 import { Card, BigCard } from '../components/Card';
 import { Row, Column } from '../components/Flex';
@@ -47,6 +50,29 @@ export default function Home() {
       price: '$300 - $800',
     },
   ];
+
+  const [loading, setLoading] = useState(true);
+
+  const [message, setMessage] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
+  const handleInputChange = (e) => {
+    setMessage({ ...message, [e.target.name]: e.target.value });
+  };
+
+  const handleFormSubmission = async (e) => {
+    e.preventDefault();
+
+    try {
+      await axios.post('/api/message', message);
+      setMessage({ ...message, name: '', email: '', message: '' });
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
 
   return (
     <>
@@ -291,21 +317,40 @@ export default function Home() {
             <Column style='pt-12 md:pt-0'>
               <Subtitle color='text-gray-200'>Send us a message</Subtitle>
 
-              <form id={style.message}>
+              <form onSubmit={handleFormSubmission} id={style.message}>
                 <div id='contact'>
-                  <input type='text' name='name' placeholder='Name' />
+                  <input
+                    type='text'
+                    name='name'
+                    value={message.name}
+                    onChange={handleInputChange}
+                    placeholder='Name'
+                  />
                 </div>
 
                 <div>
-                  <input type='email' name='email' placeholder='Email' />
+                  <input
+                    type='email'
+                    name='email'
+                    value={message.email}
+                    onChange={handleInputChange}
+                    placeholder='Email'
+                  />
                 </div>
 
                 <div>
-                  <textarea name='message' placeholder='Message'></textarea>
+                  <textarea
+                    name='message'
+                    value={message.message}
+                    onChange={handleInputChange}
+                    placeholder='Message'
+                  ></textarea>
                 </div>
 
                 <div>
-                  <button>Send</button>
+                  <button type='submit' disabled={loading ? true : false}>
+                    {loading ? <SyncLoader color='white' size={8} /> : 'Send'}
+                  </button>
                 </div>
               </form>
             </Column>
