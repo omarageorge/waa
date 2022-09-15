@@ -328,6 +328,7 @@ export default function Home() {
                     value={message.name}
                     onChange={handleInputChange}
                     placeholder='Name'
+                    required
                   />
                 </div>
 
@@ -338,6 +339,7 @@ export default function Home() {
                     value={message.email}
                     onChange={handleInputChange}
                     placeholder='Email'
+                    required
                   />
                 </div>
 
@@ -347,6 +349,7 @@ export default function Home() {
                     value={message.message}
                     onChange={handleInputChange}
                     placeholder='Message'
+                    required
                   ></textarea>
                 </div>
 
